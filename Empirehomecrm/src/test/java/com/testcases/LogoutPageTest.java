@@ -6,28 +6,27 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.base.Basetest;
-import com.pageobjects.CustomerAddPage;
-import com.pageobjects.HolidaysPage;
 import com.pageobjects.Loginfunctionality;
+import com.pageobjects.LogoutPage;
 
-public class HolidaysTest extends Basetest{
+public class LogoutPageTest extends Basetest{
 	Loginfunctionality lp;
-	HolidaysPage hp;
-    public HolidaysTest() {
+	LogoutPage lo;
+    public LogoutPageTest() {
     super();
     }
 	@BeforeMethod
     public void setup() {
     initialization();
   	lp = new Loginfunctionality();
-  	hp = new HolidaysPage();
+  	lo = new LogoutPage();
 	}
 	@Test
-	public void verifyholiday() throws Exception {
+	public void verifylogout() throws Throwable {
 	lp.verifylogin();
-	hp.verifyholiday();
+	lo.verifylogout();
 	String urltest = driver.getCurrentUrl();
-	Assert.assertEquals(urltest, "http://empirehome.myprojectsonline.co.in/Master/Holidays");
+	Assert.assertEquals(urltest, "http://empirehome.myprojectsonline.co.in/");
 	}
 	
 	@AfterMethod

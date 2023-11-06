@@ -16,7 +16,6 @@ public class Loginfunctionality extends Basetest {
    @FindBy (name="pword")
    WebElement pass;
   
-   
    @FindBy (xpath="//button[text()='Login']")
    WebElement loginbutton;
    

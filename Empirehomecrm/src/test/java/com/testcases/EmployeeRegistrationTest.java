@@ -6,33 +6,31 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.base.Basetest;
-import com.pageobjects.CustomerAddPage;
-import com.pageobjects.HolidaysPage;
+import com.pageobjects.EmployeeRegistrationPage;
 import com.pageobjects.Loginfunctionality;
 
-public class HolidaysTest extends Basetest{
+public class EmployeeRegistrationTest extends Basetest{
 	Loginfunctionality lp;
-	HolidaysPage hp;
-    public HolidaysTest() {
+	EmployeeRegistrationPage er;
+    public EmployeeRegistrationTest() {
     super();
     }
 	@BeforeMethod
     public void setup() {
     initialization();
   	lp = new Loginfunctionality();
-  	hp = new HolidaysPage();
+  	er = new EmployeeRegistrationPage();
 	}
 	@Test
-	public void verifyholiday() throws Exception {
+	public void verifyemployee() throws Throwable {
 	lp.verifylogin();
-	hp.verifyholiday();
+	er.verifyemployeereg();
 	String urltest = driver.getCurrentUrl();
-	Assert.assertEquals(urltest, "http://empirehome.myprojectsonline.co.in/Master/Holidays");
+	Assert.assertEquals(urltest, "");
 	}
 	
 	@AfterMethod
 	public void teardown() {
 	//driver.close();
 	}
-
 }
